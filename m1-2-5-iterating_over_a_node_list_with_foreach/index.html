@@ -33,27 +33,57 @@
     HINT: Use the innerText property to get the text content
     */
     // ENTER CODE HERE
+    const headerElements = document.querySelectorAll('h3');
 
+    function headerElemText () {
+      headerElements.forEach(h3 => {
+       console.log(h3.innerText)
+       })
+    }
     /*
     PROBLEM 2: Use the forEach() method to print all but the second h3 element in headerElements.
     */
    // ENTER CODE HERE
-
+   function headerElemTextExept2 () {
+    headerElements.forEach((h3, index) => {
+      if(index !== 1) {
+        console.log(h3.innerText);
+      }
+    })
+   }
+    
     /*
     PROBLEM 3: Create an array of the text content of all h3 elements (Use the forEach() method). Log the created array to the console.
     */
    // ENTER CODE HERE
 
+    function getH3Array () {
+    let resultArray = [];
+    headerElements.forEach((h3, index) => {
+      resultArray.push(h3.innerText)
+    })
+    console.log(resultArray);
+   }
+
     /*
-    PROBLEM 4: Using the forEach() method, print to the console a p followed the index of each p tag followed by the first 10 characters of its text content. For example 'p0 All your s' is the first p tag followed by the first 10 characters of its text content.
+    PROBLEM 4: Using the forEach() method, print to the console a p followed the index of each p tag followed by the first 10 characters of its text content. 
+    For example 'p0 All your s' is the first p tag followed by the first 10 characters of its text content.
     */
     // ENTER CODE HERE
+
+    const getPElem = document.querySelectorAll('p');
+
+    function getPTagWithIndex () {
+      getPElem.forEach((element, index) => {
+        console.log(`p${index} ${element.innerText.slice(0, 10)}`)
+      })
+    }
 
     /*
     PROBLEM 5 (DEBUGGING): The code below is an attempt at adding an emoji from the list of emojis to the end of each page section. Fix the issue(s) with the code.
     */
     //UNCOMMENT CODE BELOW
-    /*  ==>
+
     // function to create p (emoji) element
     const createEmojiElement = (index, emojiList) => {
       const emojiElement = document.createElement('p');
@@ -68,7 +98,7 @@
     pageSections.forEach(section => {
       section.appendChild(emojiElement)
     })
-     <== */
+
 
   </script>
 </body>

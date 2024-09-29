@@ -3,25 +3,32 @@
 
 <body>
   <h1>Setting Inline Styles With Style</h1>
-  <p>All your solutions for this set of practice problems will be written in the HTML.  Results should be visible in the web view.
+  <p style="margin-left: 100px; margin-right: 90px;">All your solutions for this set of practice problems will be written in the HTML.  Results should be visible in the web view.
   </p>
   <script>
     /*
-    PROBLEM 1: Add an inline style to the appropriate element to make all the content of the body to Verdana, or Geneva if Verdana is unavailabe, Tahoma if Verdana and Geneva aren't available, and finally sans-serif if the first three choices are not available.
+    PROBLEM 1: Add an inline style to the appropriate element to make all the content of the body to Verdana, or Geneva if Verdana is unavailabe, Tahoma if Verdana and Geneva aren't available, 
+    and finally sans-serif if the first three choices are not available.
     */
     //ENTER YOUR CODE IN THE APPROPRIATE ELEMENT
-
+    const bodyElement = document.querySelector('body')
+    bodyElement.style.fontFamily = "Verdana, Geneva, Tahoma, sans-serif"
     /*
     PROBLEM 2: Add the appropriate inline style to the appropriate element to center the heading one text and make it blue.
     */
     //ENTER YOUR CODE IN THE APPROPRIATE ELEMENT
+    const h1Style = document.querySelector('h1')
+    h1Style.style.textAlign = 'center' 
+    h1Style.style.color = 'blue'
 
      /*
     PROBLEM 3: Add the appropriate inline style to the first paragraph element to have the left margin 100px and the right margin 90px.
     */
     //ENTER YOUR CODE IN THE APPROPRIATE ELEMENT
     /*
-    PROBLEM 4: Modify the section element's inline style to include a 50px margin and a " dimgray " background color. Modify the last heading element to have inline style color red, background color white, margin 35px, and text align center.
+    PROBLEM 4: Modify the section element's inline style to include a 50px margin and a " dimgray " background color. Modify the last heading element to 
+    have inline style color red, background color white, 
+    margin 35px, and text align center.
     */
     //ENTER YOUR CODE IN THE APPROPRIATE ELEMENT
 

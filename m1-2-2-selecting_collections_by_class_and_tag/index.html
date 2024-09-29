@@ -24,28 +24,34 @@
     PROBLEM 1: Print a list of all <h3> elements in the webpage. Use getElementsByTagName on the document object to retrieve all the h3's.
     */
     //ENTER YOUR CODE HERE
-
+      const h3 = document.getElementsByTagName('h3');
+      console.log(h3);
+      <!-- console.dir(h3); -->
+    
     /*
     PROBLEM 2: Print only the first <p> element in the webpage to the console.
     */
     //ENTER YOUR CODE HERE
-
+      const firstP = document.getElementsByTagName('p') [0]
+      console.log(firstP);
     /*
     PROBLEM 3: Print all the section headers (class = "section-header") in the web page to the console.
     */
     //ENTER YOUR CODE HERE
-
+      const sectionHeader = document.getElementsByClassName('section-header')
+      console.log(sectionHeader);
     /*
     PROBLEM 4: Print all the elements that contains the text "Good luck!".
     Hint: You can search for the text "Good luck!" in the html document using cmd/ctrl + F. Use your findings to decide the best way to select all relevant elements
     */
     //ENTER YOUR CODE HERE
-
+      const goodLuckElem = document.getElementsByClassName('good-luck-text')
+      console.log(goodLuckElem);
     /*
     PROBLEM 5 (DEBUGGING): There is a typo in the main header, h1 of our webpage. The code below was written in order to correct the typo. Fix the issue(s) with the code so it works as expected.
     */
-    const header = document.getElementsByTagName("h1");
-    header.innerText = 'Practice Problems Webpage';
+    const header = document.getElementsByTagName("h1") [0];
+    header['innerText'] = 'Practice Problems Webpage';
 
   </script>
 </body>

@@ -38,28 +38,37 @@
     PROBLEM 1: Change the main header text to "Practice Problems Webpage". Log the resulting node.
     */
     //ENTER YOUR CODE HERE
+    const mainHeader = document.querySelector('main h1');
+    mainHeader.textContent = "Practice Problems Webpage";
+    console.log(mainHeader);
 
     /*
     PROBLEM 2: Change the main header color to a shade of red. Log the resulting node.
     */
     //ENTER YOUR CODE HERE
-
+    mainHeader.style.color = '#871a1a'
+    console.log(mainHeader)
     /*
     PROBLEM 3: Give the p tag in the main section an id of intro-text
     */
     //ENTER YOUR CODE HERE
-
+    const pTagMain = document.querySelector('main p');
+    pTagMain.id = "intro-text";
+    console.log(pTagMain);
     /*
     PROBLEM 4: Add the "page-section" class name to the trivia section. Be careful not to overwrite the existing class name
     */
     //ENTER YOUR CODE HERE
-
+    const pageSection = document.querySelector('.trivia')
+    pageSection.classList.add('page-section');
+    console.log(pageSection)
     /*
     PROBLEM 5 (DEBUGGING): Fix the issue(s) with the code below
     */
 
     /*
     **** UNCOMMENT CODE ****
+    */
     const button = document.createElement('button');
     const mainSection = document.querySelector('main');
     button.textContent = 'Click me!';
@@ -69,9 +78,9 @@
       color: 'blue'
     }
     button.style = buttonStyles;
-    button.style.background-color = 'orange';
+    button.style.backgroundColor = 'orange';
     mainSection.appendChild(button);
-    */
+    
 
   </script>
 </body>

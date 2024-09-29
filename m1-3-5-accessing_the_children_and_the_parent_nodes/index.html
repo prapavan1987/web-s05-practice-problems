@@ -24,17 +24,20 @@
     PROBLEM 1: List the children elements of the "About the Solutions" section
     */
     //ENTER YOUR CODE HERE
-
+    const gettingStarted = document.querySelector('.getting-started')
+    console.log(gettingStarted.children)
     /*
     PROBLEM 2: Print the class name of the h4 tag's parent element
     */
     //ENTER YOUR CODE HERE
-
+    const h4Tag = document.getElementsByTagName('h4') [0]
+    console.log(h4Tag.parentElement.className)
     /*
     PROBLEM 3: How many child elements does the unordered list with the class of "topics" have? Print count to the console
     */
     //ENTER YOUR CODE HERE
-
+    const ulElem = document.querySelector('.topics')
+    console.log(ulElem.childElementCount)
     /*
     PROBLEM 4: Print the class name of the great grand parent of the list item with an id of nodelist
     */

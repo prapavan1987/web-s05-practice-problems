@@ -8,34 +8,37 @@
         Select and log to the console all paragraph elements on the page using querySelectorAll.
     */
       // ENTER YOUR CODE HERE
-
+      const paraElem = document.querySelectorAll('p')
+      console.log(paraElem)
       /*
         PROBLEM 2:
         Select and log to the console the first element with the class "custom-style" using querySelectorAll.
     */
       // ENTER YOUR CODE HERE
-
+      const customStyle = document.querySelectorAll('.custom-style') [0]
+      console.log(customStyle)
       /*
         PROBLEM 3:
         Select and log to the console all elements with the class "custom-style" using querySelectorAll.
     */
       // ENTER YOUR CODE HERE
-
+      const customStyleAll = document.querySelectorAll('.custom-style')
+      console.log(customStyleAll)
       /*
         PROBLEM 4:
         Convert an array-like object into an array using the Array.from() method.
     */
       // ENTER YOUR CODE HERE
-
+      const array = Array.from(customStyleAll)
       /*
         PROBLEM 5 (DEBUGGING):
         The following snippet throws this error `Uncaught TypeError: document.queryselectorAll is not a function` .
         Fix the error so that it prints all the paragraphs in the page as an array of `NodeList`.
       */
-      /*
-      let paragraphs = document.queryselectorAll("p");
+     
+      let paragraphs = document.querySelectorAll("p");
       console.log(paragraphs);
-     */
+     
     </script>
   </body>
 </html>

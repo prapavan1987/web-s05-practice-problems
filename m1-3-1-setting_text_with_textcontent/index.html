@@ -18,29 +18,39 @@
     PROBLEM 1: Store the h1 text content in a variable "heading" then log heading on the console.
     */
     //ENTER YOUR CODE HERE
-
+    const heading = document.querySelector('h1');
+    console.log(heading.textContent)
     /*
     PROBLEM 2: Update the variable created in problem 1 by appending an exclamation mark (!) to it. Set the h1 text content to the updated variable.
     */
     //ENTER YOUR CODE HERE
-
+    // heading.textContent = 'Setting Text With TextContent!'
+    console.log(heading.textContent = 'Setting Text With TextContent!')
      /*
     PROBLEM 3: Create a variable "goodLuckElement" and store the p element containing the "Good luck!" text.
     Hint: Get a list of the p elements in section, go over list and compare textContent.
     */
     //ENTER YOUR CODE HERE
+    const getAllPElements = document.querySelectorAll('p');
+    const goodLuckElement;
+
+    getAllPElements.forEach((element) => {
+      if(element.textContent === 'Good luck!') {
+        goodLuckElement = element
+      }
+    })
 
     /*
     PROBLEM 4: Change the text content of goodLuckElement to "Bonne Chance!"
     */
     //ENTER YOUR CODE HERE
-
+    goodLuckElement.textContent = 'Bonne Chance!'
     /*
     PROBLEM 5 (DEBUGGING): The code below is an attempt at printing the password ("myPassword") to the console. Resolve the issue(s) with the code.
     */
-  //  const hiddenText = document.querySelector('#hidden-text');
-  //  const password = hiddenText.textContent
-  //  console.log(password)
+   const hiddenText = document.querySelector('#hidden-text span');
+   const password = hiddenText.textContent
+   console.log(password)
 
   </script>
 </body>

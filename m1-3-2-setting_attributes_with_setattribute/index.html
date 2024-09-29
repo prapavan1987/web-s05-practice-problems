@@ -11,28 +11,36 @@
     */
     let imageElement = document.createElement('img');
     // ENTER YOUR CODE HERE
-
+    imageElement.setAttribute('src', 'https://place-hold.it/400x400')
+    console.log(imageElement)
     /*
     PROBLEM 2: Write a code snippet that sets the attribute 'href' on the element with an ID of 'link-element' to this mock URL address: http://www.example.com.
     */
     // ENTER YOUR CODE HERE
-
+    const linkElement = document.getElementById('link-element')
+    linkElement.setAttribute('href', 'http://www.example.com')
+    console.log(linkElement)
     /*
     PROBLEM 3: Write a code snippet that sets the attribute 'role' of the element with an ID of 'div-element' to 'button'. You can assume there is a div with this ID name.
     */
     // ENTER YOUR CODE HERE
-
+    const divElement = document.getElementById('div-element')
+    divElement.setAttribute('role', 'button')
+    console.log(divElement)
     /*
-    PROBLEM 4: Write a code snippet that sets the 'src' attribute on an element called "newImageElement" using the 'attrName' pattern instead of the setAttribute method. You will need to create "newImageElement" first using the document's createElement() method.
+    PROBLEM 4: Write a code snippet that sets the 'src' attribute on an element called "newImageElement" using the 'attrName' pattern instead of the setAttribute method. 
+    You will need to create "newImageElement" first using the document's createElement() method.
     */
     // ENTER YOUR CODE HERE
-
+    let newimageElement = document.createElement('img')
+    newimageElement.src = 'http://www.imagsource.com/image.jpg'
+    console.log(newimageElement)
 
     /*
     PROBLEM 5 (DEBUGGING): There is an error in this code snippet. Find and fix it.
     */
-    // let newDivElement = document.createElement('div');
-    // newDivElement.setAttribute('style', 'width: 50px');
+    let newDivElement = document.createElement('div');
+    newDivElement.style.width = '50px';
 
   </script>
 </body>
