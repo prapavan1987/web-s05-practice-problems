@@ -23,6 +23,11 @@
     */
     let fruits = ['apples', 'oranges', 'grapes']
     //ENTER YOUR CODE HERE
+    fruits.forEach(fruit => {
+      const liElement = document.createElement('li');
+      liElement.textContent = fruit;
+      document.querySelector('#problem1').appendChild(liElement);
+    })
 
     /*
     PROBLEM 2:
@@ -39,6 +44,12 @@
       { text: 'Blog', href: '#blog' },
     ]
     //ENTER YOUR CODE HERE
+    links.forEach((link, index) => {
+      const aElement = document.createElement('a');
+      aElement.textContent = link.text;
+      aElement.href = link.href;
+      document.querySelector('#problem2').appendChild(aElement);
+    })
 
     /*
     PROBLEM 3:
@@ -55,6 +66,12 @@
       { value: "FR", label: "French" },
     ]
     //ENTER YOUR CODE HERE
+    languages.forEach(language => {
+      const optionElement = document.createElement('option');
+      optionElement.textContent = language.label;
+      optionElement.value = language.value;
+      document.querySelector('#problem3').appendChild(optionElement)
+    })
 
   </script>
 </body>
