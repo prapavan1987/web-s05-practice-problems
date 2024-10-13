@@ -23,14 +23,16 @@
     button.addEventListener('click', e => console.log('you clicked the BUTTON!'))
     main.addEventListener('click', e => console.log('you clicked the MAIN!'))
     // ENTER YOUR CODE HERE
-
+    body.addEventListener('click', (e) => console.log('you clicked the BODY'));
+    html.addEventListener('click', (e) => console.log('you clicked the HTML'));
+    document.addEventListener('click', (e) => console.log('you clicked the DOCUMENT'));
     /*
     PROBLEM 2:
     Add a click event listener to the global `window` object, but set it to fire on capture, instead of on bubbling.
     Open the Console and click on the button. Do you see the captured click event on the `window` object, firing first?
     */
     // ENTER YOUR CODE HERE
-
+    window.addEventListener('click', (e) => console.log('you clicked the window'), true);
   </script>
 
 

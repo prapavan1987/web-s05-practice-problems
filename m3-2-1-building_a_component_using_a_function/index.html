@@ -5,29 +5,83 @@
   <h1>Building a Component Using a Function</h1>
   <script>
     /*
-    PROBLEM 1: Create a function component called buttonMaker that generates an HTML button with the text 'Click Me!'. The function should take two parameters: text (a string) representing the text to be displayed on the button, and onClick (a function) representing the click event handler for the button. When the button is clicked, the handler should console.log('Button Clicked!');
+    PROBLEM 1: Create a function component called buttonMaker that generates an HTML button with the text 'Click Me!'. 
+    The function should take two parameters: text (a string) representing the text to be displayed on the button, 
+    and onClick (a function) representing the click event handler for the button. When the button is clicked, 
+    the handler should console.log('Button Clicked!');
     */
 
     //ENTER YOUR CODE HERE
+    function buttonMaker (text, onClick) {
+      const htmlButton = document.createElement('button');
+      htmlButton.textContent = text;
+      htmlButton.addEventListener('click', onClick);
+      return htmlButton
+    }
 
+    function handleClick () {
+      console.log('Button Clicked');
+    }
+
+    const htmlButton = buttonMaker('Click Me!', handleClick);
+    document.querySelector('body').appendChild(htmlButton);
     /*
-    PROBLEM 2: Write a function component called createCard that generates an HTML card element. The function should take three parameters: title (a string) representing the card title, description (a string) representing the card description, and imageUrl (a string) representing the URL of the image to be displayed in the card. Once you write the function, call it with the following parameters:
+    PROBLEM 2: Write a function component called createCard that generates an HTML card element. 
+    The function should take three parameters: title (a string) representing the card title, 
+    description (a string) representing the card description, and imageUrl (a string) representing the URL of the image to be displayed in the card. 
+    Once you write the function, call it with the following parameters:
 
     createCard('Card Title', 'This is a description of the card.', 'https://example.com/image.jpg');
     */
 
     //ENTER YOUR CODE HERE
+    function createCard (title, description, imageUrl) {
+      const htmlCard = document.createElement('div');
+      htmlCard.classList.add('card');
 
+      const cardTitle = document.createElement('h2');
+      cardTitle.textContent = title;
+
+      const cardDescription = document.createElement('p');
+      cardDescription.textContent = description;
+
+      const cardImage = document.createElement('img');
+      cardImage.src = imageUrl;
+      cardImage.alt = 'card-image';
+
+      htmlCard.appendChild(cardTitle);
+      htmlCard.appendChild(cardDescription);
+      htmlCard.appendChild(cardImage);
+
+      document.querySelector('body').appendChild(htmlCard);
+    }
+
+    createCard('Card Title', 'This is a description of the card.', 'https://example.com/image.jpg')
     /*
-    PROBLEM 3: Create a function component called toggleVisibility that toggles the visibility of an HTML element. The function should take the element's id as its only parameter. If the element is currently visible, the function should hide it; if it is hidden, the function should make it visible.
+    PROBLEM 3: Create a function component called toggleVisibility that toggles the visibility of an HTML element. 
+    The function should take the element's id as its only parameter. If the element is currently visible, 
+    the function should hide it; if it is hidden, the function should make it visible.
     */
 
     //ENTER YOUR CODE HERE
+    function toggleVisibility (elementId) {
+      const element = document.getElementById(elementId);
+      if (element.style.display === 'none') {
+        element.style.display = 'block';
+      } else {
+        element.style.disply = 'none';
+      }
+    }
 
+    // const toggleButton = buttonMaker('Toggle Me!', toggleVisibility);
+    // document.querySelector('body').appendChild(toggleButton);
     /*
-    PROBLEM 4: Create a function component called createForm that creates a simple HTML form from the structure below. The function should take no parameters. The form should contain two input fields: one for the name (with the ID nameInput) and one for the email address (with the ID emailInput).
+    PROBLEM 4: Create a function component called createForm that creates a simple HTML form from the structure below. 
+    The function should take no parameters. The form should contain two input fields: one for the name (with the ID nameInput) 
+    and one for the email address (with the ID emailInput).
 
-    STRETCH YOURSELF: Create another function called submitForm that checks if both fields are filled in and makes the form disappear once the submit button is clicked.
+    STRETCH YOURSELF: Create another function called submitForm that checks if both fields are filled 
+    in and makes the form disappear once the submit button is clicked.
 
     HINT: You may want to use some components that you created earlier.
 
@@ -46,7 +100,8 @@
     //ENTER YOUR CODE HERE
 
     /*
-     PROBLEM 5 (DEBUGGING): The following code is intended to change the background color of a paragraph when the mouse hovers over it. However, the background color does not change as expected when the code is executed. Identify and fix the bug to make the hover effect work correctly.
+     PROBLEM 5 (DEBUGGING): The following code is intended to change the background color of a paragraph when the mouse hovers over it. However, 
+     the background color does not change as expected when the code is executed. Identify and fix the bug to make the hover effect work correctly.
      */
 
     const myParagraph = document.getElementById('myParagraph');

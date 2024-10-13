@@ -13,7 +13,8 @@
   </section>
   <script>
     /*
-    If you click on any of the three buttons while watching the console, you will see the click event bubbling up the DOM. In its trip, the event travels through the following elements: BUTTON -> DIV  -> SECTION -> BODY -> HTML
+    If you click on any of the three buttons while watching the console, you will see the click event bubbling up the DOM. 
+    In its trip, the event travels through the following elements: BUTTON -> DIV  -> SECTION -> BODY -> HTML
 
     PROBLEM 1:
     Let's modify the event handler below, to stop the bubbling in its tracks, on click of button1.
@@ -33,6 +34,9 @@
         const { id, nodeName } = evt.currentTarget
         console.log(`Event handler firing at ${id} (${nodeName})`)
         // ADD YOUR CODE HERE FOR PROBLEMS 1, 2, 3
+        if (evt.target === button3 && evt.currentTarget === section) {
+          evt.stopPropagation();
+        }
       })
     })
 
