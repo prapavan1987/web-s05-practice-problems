@@ -24,7 +24,14 @@
     elements.forEach(element => {
       element.addEventListener('click', event => {
         // ENTER YOUR CODE HERE
-      })
+        const className = event.currentTarget.className;
+        const nodeName = event.currentTarget.nodeName;
+
+        console.log(`The ${className} element is a ${nodeName}`)
+        if (event.currentTarget === document.querySelector('section')) { // PROBLEM 3
+          console.log('I love this section!')
+        }
+      }), { capture: true }
     })
 
     /*
