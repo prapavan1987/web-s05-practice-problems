@@ -36,7 +36,8 @@
     sumAsynchronously(3, 4).then(console.log) // the result will be 7
     console.log(sumSynchronously(5, 7)) // the result will be 12
     /*
-    SOLUTION: sumAsynchronously has its result handled (in this case printed) asynchronously, in a future when all pending synchronous work is done.
+    SOLUTION: sumAsynchronously has its result handled (in this case printed) asynchronously, in a future when all pending synchronous 
+    work is done.
     This means that we will first see number 12 printed in the console (sync work), and then 7 (future, async work).
     */
 

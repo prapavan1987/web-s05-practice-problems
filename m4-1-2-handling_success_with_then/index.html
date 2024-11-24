@@ -14,7 +14,14 @@
       // Do not worry about how this function works internally
       return Promise.resolve(`Hello, ${name}!`)
     }
+    
+    console.log('this shoud print first')
     // ENTER YOUR CODE HERE
+    greetAsync('Bavan').then(message => {
+      console.log(message);
+      console.log(message);
+      console.log(message);
+    })
 
     /*
     PROBLEM 2:
@@ -26,7 +33,13 @@
       return Promise.resolve(!!Math.floor(Math.random() * 2))
     }
     // ENTER YOUR CODE HERE
-
+    coinTossAsync().then(random => {
+      if (random) {
+        console.log("It's heads!");
+      } else {
+        console.log("It's tails!");
+      }
+    })
     /*
    PROBLEM 3:
     The function getYearAsync below returns a promise that fulfills the current year (E.G. 2023).
@@ -38,7 +51,12 @@
       return Promise.resolve(new Date().getFullYear())
     }
     // ENTER YOUR CODE HERE
-
+    getYearAsync().then(result => {
+      const myBirthYear = 1987;
+      console.log(`This Year is ${result}`);
+      const myAge = result - myBirthYear;
+      console.log(myAge)
+    })
   </script>
 </body>
 

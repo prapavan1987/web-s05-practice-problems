@@ -9,8 +9,10 @@
   <script>
     /*
     PROBLEM 1:
-    The function evenOrOdd below takes a number (E.G. 7) and returns a promise which fulfills a string if the number is even, and rejects a different string if the number is odd.
-    Invoke the function, passing it number 7. Handle success by logging out the fulfilled value. Handle failure by logging out the rejected value. Try different nunbers.
+    The function evenOrOdd below takes a number (E.G. 7) and returns a promise which fulfills a string if the number is even, 
+    and rejects a different string if the number is odd.
+    Invoke the function, passing it number 7. Handle success by logging out the fulfilled value. Handle failure by logging out 
+    the rejected value. Try different nunbers.
     */
     function evenOrOdd(num) { // rejects if num not even
       // Do not worry about how this function works internally
@@ -19,11 +21,16 @@
         : Promise.reject(`${num} is odd.`)
     }
     // ENTER YOUR CODE HERE
-
+    evenOrOdd(2).then(result => {
+      console.log(result);
+    }).catch(err => {
+      console.log(err);
+    })
     /*
     PROBLEM 2:
     The function fetchData below returns a promise which sometimes fulfills a value object, but other times rejects an error object.
-    Invoke the function. Handle success by console logging "The data: " followed by the `data` property of the resolved value. Handle rejection by logging "The rejection: " followed by the `message` property of the rejected error.
+    Invoke the function. Handle success by console logging "The data: " followed by the `data` property of the resolved value. 
+    Handle rejection by logging "The rejection: " followed by the `message` property of the rejected error.
     */
     function fetchData() {
       // Do not worry about how this function works internally
@@ -32,18 +39,26 @@
         : Promise.reject(new Error('Server error, could not fetch data'))
     }
     // ENTER YOUR CODE HERE
-
+    fetchData().then(ret => {
+      console.log("The data: " + ret.data);
+    }).catch(err => {
+      console.log("The rejection: " + err.message);
+    })
     /*
     PROBLEM 3:
     The function queryDatabase below returns a promise that always rejects an error object.
-    Invoke the function and handle failure by saving the error message into a variable, turning it to ALL CAPS, and writing it to the DOM as text content for the p#error element found in the HTML above.
+    Invoke the function and handle failure by saving the error message into a variable, turning it to ALL CAPS, 
+    and writing it to the DOM as text content for the p#error element found in the HTML above.
    */
     function queryDatabase() {
       // Do not worry about how this function works internally
       return Promise.reject(new Error('Cannot connect to the database'))
     }
     // ENTER YOUR CODE HERE
-
+    queryDatabase().catch(error => {
+      const errorMessage = error.message.toUpperCase();
+      document.querySelector('p#error').textContent = errorMessage
+    })
   </script>
 </body>
 

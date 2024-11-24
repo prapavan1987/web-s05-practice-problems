@@ -20,6 +20,8 @@
 
       try {
         // ENTER YOUR CODE HERE
+        const result = await axios.get(pluto);
+        console.log(`Pluto is the ${result.data.id}th planet!`)
       } catch (err) {
         console.log(`Something went wrong: ${err.message}`)
       }
@@ -35,8 +37,11 @@
 
       try {
         // ENTER CODE HERE
+          const res = await axios.get(badPlanet);
+          console.log(`${res.data.name} is in your dreams!`)
       } catch (err) {
         // ENTER MORE CODE HERE
+        console.log(`Something went wrong: ${err.message}`)
       }
 
       /*
@@ -55,7 +60,17 @@
         })
         .catch(err => { console.log(err.message) })
       // ENTER YOUR CODE HERE
-
+        try {
+          let result = await axios.get(planetList);
+          let planets = result.data;
+          let legitPlanets = planets.filter(planet => planet.name !== 'pluto');
+          console.log("The legit Planets are: ");
+          legitPlanets.forEach(legitPlanet => {
+            console.log(`\t* ${legitPlanet.name}`)
+          })
+        } catch(err) {
+          console.log()
+        }
     }())
   </script>
 </body>
