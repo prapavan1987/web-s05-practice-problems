@@ -21,6 +21,11 @@
       .then(planet => {
         console.log(planet)
         // ENTER YOUR CODE HERE
+        console.log(`${planet.name} is a planet ${planet.diameter} Km in diameter, with a rotation 
+        period of ${planet.rotation_period} hours, which takes ${planet.rotation_around_sun} days to go around the Sun`)
+      })
+      .catch(err => {
+        console.error('Error fetching planet data:', err)
       })
 
     /*
@@ -30,7 +35,15 @@
     */
     const marsURL = 'https://webapis.bloomtechdev.com/planets/4'
     // ENTER YOUR CODE HERE
-
+    fetch(marsURL)
+    .then(res => {
+      return res.json()
+    })
+    .then(planet => {
+      console.log(planet);
+      console.log(`${planet.name} is a planet ${planet.diameter} Km in diameter, with a rotation 
+        period of ${planet.rotation_period} hours, which takes ${planet.rotation_around_sun} days to go around the Sun`)
+    })
     /*
     PROBLEM 3:
     Use fetch to obtain the data of all the planets using the `solarSystemURL`.
@@ -38,7 +51,15 @@
     */
     const solarSystemURL = 'https://webapis.bloomtechdev.com/planets'
     // ENTER YOUR CODE HERE
-
+    fetch(solarSystemURL)
+    .then(res => {
+      return res.json();
+    })
+    .then(planets => {
+      planets.forEach(planet => {
+        console.log(`${planet.name} is number ${planet.id}`)
+      });
+    })
   </script>
 </body>
 
