@@ -15,18 +15,21 @@
   <script>
     /*
     PROBLEM 1:
-    We are using Axios to request a snail from a slow API. The spinner is showing all the time, and the snail eventually arrives and renders to the DOM.
+    We are using Axios to request a snail from a slow API. The spinner is showing all the time, and the snail 
+    eventually arrives and renders to the DOM.
       - 👉 Turn off the spinner by editing the CSS file, setting display none on the #spinner element.
       - 👉 Turn the spinner back on right before making the Axios request, using JavaScript.
       - 👉 On success turn the spinner off once more, using JavaScript.
     */
     const snail = 'https://webapis.bloomtechdev.com/slow/snail'
     // START SPINNER HERE
+    document.querySelector('#spinner').style.display = 'block';
     axios.get(snail)
       .then(res => {
         const { name, created_on } = res.data
         document.querySelector('#data').textContent = `The ${name} was created on ${created_on}`
         // STOP SPINNER HERE
+        document.querySelector('#spinner').style.display = 'none'
       })
     /*
     PROBLEM 2:
@@ -37,6 +40,13 @@
     const bug = 'https://webapis.bloomtechdev.com/slow/bug'
     axios.get(bug)
     // ADD YOUR CODE HERE
+    .then(res => {
+      console.log(res.data)
+    })
+    .catch(err => {
+      const errorMessage = err?.response?.data?.message;
+      document.querySelector('#error').textContent = errorMessage;
+    })
 
   </script>
 </body>

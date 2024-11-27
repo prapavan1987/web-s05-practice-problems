@@ -14,7 +14,8 @@
   <script>
     /*
     PROBLEM 1:
-    We are using Axios to request all planets in the Solar System, including Pluto of course. On success, loop over the planet objects, and for each planet, append to div#planets the markup shown below (Mercury used as an example):
+    We are using Axios to request all planets in the Solar System, including Pluto of course. On success, 
+    loop over the planet objects, and for each planet, append to div#planets the markup shown below (Mercury used as an example):
 
     <div>
       <h3>Mercury</h3>
@@ -27,7 +28,34 @@
     */
     const planets = 'https://webapis.bloomtechdev.com/planets'
     axios.get(planets) // ADD YOUR CODE HERE
+    .then(res => {
+      const planets = res.data;
+      const planetContainer = document.querySelector('#planets');
+      planets.forEach(planet => {
+        if (planet.name !== 'Pluto') {
+          const h3 = document.createElement('h3');
+        h3.textContent = planet.name;
 
+        const p1 = document.createElement('p');
+        p1.textContent = `Diameter: ${planet.diameter} km`
+
+        const p2 = document.createElement('p');
+        p2.textContent = `Rotation: ${planet.rotation_period} hours`
+        
+        const p3 = document.createElement('p');
+        p3.textContent = `Orbital Period: ${planet.rotation_around_sun} days`
+
+        const planetDiv = document.createElement('div')
+
+        planetDiv.appendChild(h3);
+        planetDiv.appendChild(p1);
+        planetDiv.appendChild(p2);
+        planetDiv.appendChild(p3);
+
+        planetContainer.appendChild(planetDiv)
+        }
+      });
+    })
     /*
     PROBLEM 2:
     Although this is misguided, find a way to prevent _planet_ Pluto from rendering to the DOM.

@@ -19,6 +19,9 @@
     axios.get(planetURL)
       .then(response => {
         // ENTER YOUR CODE HERE
+        const data = response.data
+        console.log(data);
+        console.log(`${data.name} is a planet ${data.diameter} Km in diameter, with a rotation period of ${data.rotation_period} hours.`)
       })
 
     /*
@@ -28,7 +31,11 @@
     */
     const baseURL = 'https://webapis.bloomtechdev.com/planets/'
     // ENTER YOUR CODE HERE
-
+    axios.get(`${baseURL}9`)
+    .then(res => {
+      const data = res.data;
+      console.log(`I am not sure ${data.name} is a planet!`)
+    })
     /*
     PROBLEM 3:
     Use Axios to get information from the `badURL`. Because a planet with id `12345` does not exist, this request will reject.
